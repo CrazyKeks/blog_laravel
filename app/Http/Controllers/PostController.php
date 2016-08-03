@@ -52,7 +52,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-      
+      $post = Posts::find($id);
+      return view('post.show',['post' => $post]);
     }
 
     /**
@@ -63,7 +64,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Posts::find($id);
+        return view('post.edit',['post' => $post]);
+
     }
 
     /**
@@ -75,7 +78,9 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Posts::find($id);
+        $post->update($request->all());
+        return view('post.show',['post' => $post]);
     }
 
     /**
@@ -89,3 +94,4 @@ class PostController extends Controller
         //
     }
 }
+

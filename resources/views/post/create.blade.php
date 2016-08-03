@@ -8,6 +8,7 @@
 
 		@include('post._form')
 
+	{!! Form::submit('Отправить', ['class'=>'btn btn-primary']) !!}
 	{!! Form::close() !!}
 
 
